@@ -89,7 +89,7 @@ const App = () => {
 <footer className="bg-[#364049] py-8 mt-16 shadow-inner">
   <div className="max-w-7xl mx-auto text-center text-white space-y-4">
     <h1 className="text-2xl font-bold font-serif tracking-wider">
-      Made by <span className="text-yellow-400">Hackathon Group</span>
+      Made by <span className="text-yellow-400">TechnoformX</span>
     </h1>
     <p className="text-sm text-gray-300 font-mono">
       © {new Date().getFullYear()} ScholarBuddy. TechnoformX . All rights reserved.
