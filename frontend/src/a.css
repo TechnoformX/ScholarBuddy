@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
-
-
+/*
+  Navbar styling:
+  - Removed fixed height h-[110px] to allow flexbox and padding from JSX to control height.
+  - Removed border-b border-gray-300 as shadow-lg is used in JSX for a better look.
+*/
 .navbar{
-    @apply bg-[#0f1924] text-white  h-[110px]  will-change-auto flex justify-between items-center border-b border-gray-300;
+    @apply bg-[#0f1924] text-white will-change-auto flex justify-between items-center;
 }
 
+/*
+  Main image container styling:
+  - Removed fixed height h-[300px] to allow the image inside to control its responsive height
+    and maintain aspect ratio with object-cover.
+  - Retained flex properties for centering.
+*/
 .main-img{
-    @apply flex flex-col will-change-auto h-[300px] justify-center items-center;
+    @apply flex flex-col will-change-auto justify-center items-center;
 }
 
+/*
+  Heading styling:
+  - Maintained existing properties. Font-bold is now often overridden by more specific
+    font weights directly in JSX (e.g., font-extrabold).
+*/
 .heading{
-    @apply flex flex-col will-change-auto font-bold text-center text-white space-y-5 ;
+    @apply flex flex-col will-change-auto font-bold text-center text-white space-y-5;
 }
 
+/* Chat section styling (assuming this is for a chat history area, not directly used in provided JSX) */
 .chat{
-    @apply will-change-auto h-[420px]
+    @apply will-change-auto h-[420px];
 }
 
 /* a.css */
 
-/* Define a simple fade-in animation */
+/* Define a simple fade-in animation for general elements like the heading */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -35,6 +50,23 @@
 .animate-fade-in {
   animation: fadeIn 1s ease-out forwards; /* Apply the animation */
 }
+
+/* New animation for the central image: fade and subtle expand */
+@keyframes fadeExpandImage {
+  from {
+    opacity: 0;
+    transform: scale(0.95); /* Start slightly smaller */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1); /* End at normal size */
+  }
+}
+
+.animate-fade-expand-image {
+  animation: fadeExpandImage 1.5s ease-out forwards; /* Longer duration for a smoother effect */
+}
+
 
 /* You might want to import a custom font here for your headings */
 /* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap'); */
