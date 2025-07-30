@@ -1,27 +1,34 @@
 import React from 'react'
 
-const Card = ({name, des, logo, link1}) => {
+const Card = ({ name, des, logo, link1 }) => {
   return (
-    <div>
-      <div className='w-[420px] h-[400px] bg-[#1c3c50] ml-[40px] mt-[39px] rounded-4xl shadow-2xl flex flex-col'> 
-        <div className='flex flex-row h-[150px]'>
-        <img src={logo} alt="Scholarship Logo" className="w-12 h-12 ml-[19px] mt-[12px]"/>
-          <h1 className='text-white text-right font-semibold  font-mono text-3xl mr-[30px] mt-[15px]'>{name}</h1>
-        </div>
-        
-        <div className='flex flex-row  h-[180px]'>
-          <h1 className='text-white font-regular ml-[20px] mt-[20px] text-center'>{des}</h1>
-        </div>
-        <a
-  href={link1}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="w-[300px] h-[55px] inline-flex items-center justify-center text-center bg-[#b9a35a] ml-[50px] font-bold text-white text-2xl rounded-[20px] shadow-2xl font-mono hover:cursor-pointer hover:shadow-lg"
->
-  Apply Now
-</a>
-      
-      </div> 
+    <div className='w-[420px] h-[440px] bg-[#1c3c50] ml-[40px] mt-[39px] rounded-3xl shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-[0_10px_40px_rgba(255,255,255,0.2)] p-5 flex flex-col items-center justify-between'>
+
+      {/* Scholarship Title */}
+      <h1 className='text-white font-semibold font-mono text-2xl text-center px-2'>
+        {name}
+      </h1>
+
+      {/* Logo Centered */}
+      <div className='mt-3'>
+        <img src={logo} alt="Scholarship Logo" className="w-16 h-16 object-contain rounded-xl" />
+      </div>
+
+      {/* Description */}
+      <p className='text-white font-light text-center mt-4 px-3 text-sm leading-relaxed'>
+        {des}
+      </p>
+
+      {/* Apply Button */}
+      <a
+        href={link1}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full max-w-[300px] h-[55px] mt-6 bg-gradient-to-r from-[#043333] to-[#2d5555] font-bold text-white text-xl rounded-[20px] shadow-md font-mono flex items-center justify-center hover:shadow-lg hover:cursor-pointer"
+      >
+        Enroll Now
+      </a>
+
     </div>
   )
 }
