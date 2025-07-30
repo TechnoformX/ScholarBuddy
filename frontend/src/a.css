@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+
+
+.navbar{
+    @apply bg-[#0f1924] text-white  h-[110px]  will-change-auto flex justify-between items-center border-b border-gray-300;
+}
+
+.main-img{
+    @apply flex flex-col will-change-auto h-[300px] justify-center items-center;
+}
+
+.heading{
+    @apply flex flex-col will-change-auto font-bold text-center text-white space-y-5 ;
+}
+
+.chat{
+    @apply will-change-auto h-[420px]
+}
