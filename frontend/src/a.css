@@ -17,3 +17,29 @@
 .chat{
     @apply will-change-auto h-[420px]
 }
+
+/* a.css */
+
+/* Define a simple fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Optional: slight slide up */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards; /* Apply the animation */
+}
+
+/* You might want to import a custom font here for your headings */
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap'); */
+
+/* If you use a custom font, apply it like this in Tailwind config or directly */
+/* h1 {
+  font-family: 'Montserrat', sans-serif;
+} */
