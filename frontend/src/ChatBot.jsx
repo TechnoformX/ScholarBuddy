@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-import "./a.css" // Ensure this CSS file is used for any custom animations/fonts
+import "./a.css"
 import logo from './images/logo.jpg'
 import profile from './images/profile.png'
-import cover from './images/cover.png'
+
+// Replaced the local cover image with a URL for a scholarship-related image
+const SCHOLARSHIP_COVER_IMAGE_URL = 'http://googleusercontent.com/image_collection/image_retrieval/8846162586254347123_0';
 
 const ChatBot = () => {
   const [input, setInput] = useState("");
@@ -50,8 +52,13 @@ const ChatBot = () => {
 
       {/* Main content area with a subtle background */}
       <div className='min-h-screen bg-gradient-to-br from-[#0f1924] to-[#1a2b3d] py-10'> {/* Added gradient */}
-        <div className='main-img text-center mb-8'> {/* Centered image container with margin-bottom */}
-          <img src={cover} alt="Main Image" className='w-full max-w-4xl mx-auto rounded-lg shadow-xl'/> {/* Max width, auto margins for centering */}
+        {/* Main image container with fade and expand effect */}
+        <div className='main-img text-center mb-8 animate-fade-expand-image'>
+          <img
+            src={SCHOLARSHIP_COVER_IMAGE_URL}
+            alt="Students studying, representing scholarships"
+            className='w-full max-w-5xl mx-auto rounded-lg shadow-xl object-cover h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px]' // Added object-cover and responsive height
+          />
         </div>
         <div className='heading text-center text-white mt-4 animate-fade-in'> {/* Added a simple fade-in class (needs CSS) */}
           <h1 className='text-5xl font-extrabold mb-2'>Welcome to ScholarBuddy</h1> {/* Larger, bolder heading */}
