@@ -43,7 +43,8 @@ body {
 
 .heading{
     /* Apply new heading font and text color */
-    @apply flex flex-col will-change-auto font-heading text-center text-[var(--color-text-light)] space-y-5;
+    @apply flex flex-col will-change-auto text-center text-[var(--color-text-light)] space-y-5;
+    font-family: 'Lora', serif; /* Apply heading font directly */
 }
 
 .chat{
