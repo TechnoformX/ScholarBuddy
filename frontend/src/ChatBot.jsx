@@ -2,12 +2,10 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-import "./a.css"
+import "./a.css" // Make sure your CSS file is correctly imported
 import logo from './images/logo.jpg'
 import profile from './images/profile.png'
-
-// Replaced the local cover image with a URL for a scholarship-related image
-const SCHOLARSHIP_COVER_IMAGE_URL = 'http://googleusercontent.com/image_collection/image_retrieval/8846162586254347123_0';
+import cover from './images/cover.png'; // <--- Your original bookshelf image
 
 const ChatBot = () => {
   const [input, setInput] = useState("");
@@ -39,49 +37,60 @@ const ChatBot = () => {
 
   return (
     <div>
-      {/* Navbar with subtle shadow and refined spacing */}
-      <div className='navbar flex justify-between items-center py-4 px-8 bg-[#0f1924] shadow-lg'>
+      {/* Navbar with deep dark background and subtle shadow */}
+      <div className='navbar flex justify-between items-center py-4 px-8 shadow-lg'>
         <img src={logo} alt="ScholarBuddy Logo" className='w-[60px] h-[60px] rounded-full cursor-pointer transition-transform duration-300 hover:scale-110'/>
-        <div className='flex space-x-8 mt-[0px]'> {/* Adjusted spacing and removed unnecessary margin-top */}
-          <h1 className='text-white text-xl font-semibold hover:text-blue-300 cursor-pointer transition-colors duration-300'>Home</h1>
-          <h1 className='text-white text-xl font-semibold hover:text-blue-300 cursor-pointer transition-colors duration-300'>Scholarships</h1>
-          <h1 className='text-white text-xl font-semibold hover:text-blue-300 cursor-pointer transition-colors duration-300'>Contact</h1>
-          <img src={profile} alt="Profile icon" className='w-[35px] h-[35px] ml-4 cursor-pointer'/> {/* Adjusted size and margin */}
+        <div className='flex space-x-8'>
+          {/* Navigation links with body font and warm hover effect */}
+          <h1 className='text-[var(--color-text-light)] text-xl font-body font-semibold hover:text-[var(--color-accent-gold)] cursor-pointer transition-colors duration-300'>Home</h1>
+          <h1 className='text-[var(--color-text-light)] text-xl font-body font-semibold hover:text-[var(--color-accent-gold)] cursor-pointer transition-colors duration-300'>Scholarships</h1>
+          <h1 className='text-[var(--color-text-light)] text-xl font-body font-semibold hover:text-[var(--color-accent-gold)] cursor-pointer transition-colors duration-300'>Contact</h1>
+          <img src={profile} alt="Profile icon" className='w-[35px] h-[35px] ml-4 cursor-pointer'/>
         </div>
       </div>
 
-      {/* Main content area with a subtle background */}
-      <div className='min-h-screen bg-gradient-to-br from-[#0f1924] to-[#1a2b3d] py-10'> {/* Added gradient */}
+      {/* Main content area with a deep dark gradient background complementing the image */}
+      <div className='min-h-screen bg-gradient-to-br from-[var(--color-dark-bg-1)] to-[var(--color-dark-bg-2)] py-10'>
         {/* Main image container with fade and expand effect */}
-        <div className='main-img text-center mb-8 animate-fade-expand-image'>
+        <div className='main-img text-center mb-10 animate-fade-expand-image'>
           <img
-            src={SCHOLARSHIP_COVER_IMAGE_URL}
-            alt="Students studying, representing scholarships"
-            className='w-full max-w-5xl mx-auto rounded-lg shadow-xl object-cover h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px]' // Added object-cover and responsive height
+            src={cover} // Using your original 'cover.png' image
+            alt="A bookshelf filled with various books, representing knowledge and learning."
+            className='w-full max-w-5xl mx-auto rounded-lg shadow-2xl object-cover h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px]'
           />
         </div>
-        <div className='heading text-center text-white mt-4 animate-fade-in'> {/* Added a simple fade-in class (needs CSS) */}
-          <h1 className='text-5xl font-extrabold mb-2'>Welcome to ScholarBuddy</h1> {/* Larger, bolder heading */}
-          <h2 className='text-xl font-light text-gray-300'>I'm here to help you find the perfect scholarship for you.</h2> {/* Slightly refined text */}
+        <div className='heading text-center mt-4 animate-fade-in'>
+          {/* Main heading with new academic font and subtle shadow */}
+          <h1 className='text-5xl sm:text-6xl font-heading font-extrabold mb-2 text-[var(--color-text-light)] drop-shadow-md'>Welcome to ScholarBuddy</h1>
+          {/* Subheading with muted text color, hinting at knowledge */}
+          <h2 className='text-xl sm:text-2xl font-body font-light text-[var(--color-text-muted)]'>Your guide to a world of knowledge and opportunity.</h2>
         </div>
 
-        {/* Input Box */}
-        <div className='input-box flex flex-row items-center justify-center mt-12'> {/* Increased margin-top */}
-          <img src={profile} alt="Profile" className='w-[45px] h-[45px] mr-4'/> {/* Slightly larger icon, more margin */}
+        {/* Input Box - Modern and Academic-themed */}
+        <div className='input-box flex flex-col items-center justify-center mt-16 sm:flex-row'>
+          <img src={profile} alt="Profile" className='w-[50px] h-[50px] mr-0 sm:mr-4 mb-4 sm:mb-0'/>
           <input
             type="text"
-            placeholder='Ask me anything, e.g., "scholarships for engineering students in India"...'
-            className='w-3/5 md:w-[600px] h-[55px] rounded-full p-4 font-medium text-white bg-[#223649] focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400' // Rounded, padding, focus state, placeholder color
+            placeholder='Ask me about scholarships, fields of study, or locations...'
+            className='w-11/12 md:w-[650px] h-[60px] rounded-xl p-4 pl-6 font-body font-medium text-[var(--color-text-light)] bg-[var(--color-medium-bg)]
+                       border border-[var(--color-accent-gold)] focus:outline-none focus:ring-3 focus:ring-[var(--color-accent-gold)]
+                       placeholder-[var(--color-text-muted)] transition-all duration-300 shadow-xl' // Rounded-xl, warm border/focus
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
           <button
             onClick={handleSend}
-            className='font-bold text-xl text-white w-[120px] h-[55px] rounded-full ml-4 bg-blue-500 hover:bg-blue-600 transition-colors duration-300 shadow-md' // Full rounded, stronger blue, hover, shadow
+            className='font-heading font-bold text-xl text-[var(--color-text-light)] w-[140px] h-[60px] rounded-xl ml-0 sm:ml-4 mt-4 sm:mt-0
+                       bg-[var(--color-accent-orange)] hover:bg-opacity-90 transition-all duration-300 shadow-xl
+                       flex items-center justify-center space-x-2' // Rounded-xl, deep orange button
           >
-            Send
+            <span>Send</span>
           </button>
         </div>
+        {/* Optional: You can uncomment this section if you want a subtle pulsating text below the input */}
+        {/* <div className='text-center mt-8'>
+          <p className='text-[var(--color-accent-gold)] text-lg animate-pulse-glow'>Discover your next chapter.</p>
+        </div> */}
       </div>
     </div>
   )
