@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './a.css';
 import { Typewriter } from 'react-simple-typewriter';
-import coverImage from './cover.png';
+import coverImage from './images/cover.png';
 
 const ChatBot = () => {
   const [inputText, setInputText] = useState('');
