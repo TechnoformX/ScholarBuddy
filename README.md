@@ -1,6 +1,6 @@
 # Fusion2.0
 
-# ![ScholarBuddy Logo](./src/assets/logo.png)
+# ![ScholarBuddy Logo](./src/images/logo.jpg)
 
 # 🎓 ScholarBuddy
 
